@@ -50,10 +50,6 @@ public class LoginActivity extends Activity {
         });
     }
 
-    private void CreateSurface(){
-
-    }
-
     private class SurfaceViewLis implements SurfaceHolder.Callback {
 
         @Override
@@ -64,7 +60,6 @@ public class LoginActivity extends Activity {
 
         @Override
         public void surfaceCreated(SurfaceHolder holder) {
-            if (true) {
                 try {
                     play();
                 } catch (IllegalArgumentException e) {
@@ -80,7 +75,6 @@ public class LoginActivity extends Activity {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-            }
         }
 
         @Override
@@ -92,6 +86,7 @@ public class LoginActivity extends Activity {
 
     public void play() throws IllegalArgumentException, SecurityException,
             IllegalStateException, IOException {
+        mediaPlayer.reset();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         AssetFileDescriptor fd = this.getAssets().openFd("mox.mp4");
         mediaPlayer.setDataSource(fd.getFileDescriptor(), fd.getStartOffset(),
@@ -104,6 +99,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onPrepared(MediaPlayer mp) {
                 // 装载完毕回调
+                mediaPlayer.seekTo(mCurrentPosition);
                 mediaPlayer.start();
 //                mHandler.sendEmptyMessage(SURFACE_VIEW_SHOW);
             }
@@ -114,7 +110,7 @@ public class LoginActivity extends Activity {
     protected void onStart() {
         super.onStart();
         if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
-            mediaPlayer.seekTo(mCurrentPosition);
+
             mediaPlayer.start();
         }
     }
