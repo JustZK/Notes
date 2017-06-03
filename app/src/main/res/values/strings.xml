@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="temp">Temp</string>
+    <string name="login_like_qq">类似QQ的登录界面</string>
+    <string name="customize_drawable">自定义Drawable</string>
+    <string name="media_player">SurfaceView + MediaPlayer</string>
+</resources>
