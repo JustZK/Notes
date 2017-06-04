@@ -109,10 +109,10 @@ public class LoginActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
-
-            mediaPlayer.start();
-        }
+//        if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
+//
+//            mediaPlayer.start();
+//        }
     }
 
     @Override
