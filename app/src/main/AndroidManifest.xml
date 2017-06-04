@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".player.MediaPlayerActivity"></activity>
+        <activity android:name=".player.MediaPlayerActivity" />
+        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivity" />
+        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityOne" />
+        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityTwo" />
+        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityThree"></activity>
     </application>
 
 </manifest>

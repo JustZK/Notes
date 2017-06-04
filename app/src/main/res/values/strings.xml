@@ -4,4 +4,8 @@
     <string name="login_like_qq">类似QQ的登录界面</string>
     <string name="customize_drawable">自定义Drawable</string>
     <string name="media_player">SurfaceView + MediaPlayer</string>
+    <string name="sliding_pane_layout">SlidingPaneLayout</string>
+    <string name="sliding_pane_layout_one">简单使用一</string>
+    <string name="sliding_pane_layout_two">简单使用二</string>
+    <string name="sliding_pane_layout_three">滑动关闭Activity</string>
 </resources>

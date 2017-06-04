@@ -10,11 +10,12 @@ import android.view.View;
 
 import com.example.zk.notes.login.LoginActivity;
 import com.example.zk.notes.player.MediaPlayerActivity;
+import com.example.zk.notes.slidingpanelayout.SlidingPaneLayoutActivity;
 import com.example.zk.notes.util.LogUtil;
 
 import java.util.ArrayList;
 
-public class MainActivity extends Activity {
+public class  MainActivity extends Activity {
     private static final String TAG = "MainActivity";
     private RecyclerView main_rlv;
     private ArrayList<String> list;
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
         list.add(this.getResources().getString(R.string.login_like_qq));
         list.add(this.getResources().getString(R.string.customize_drawable));
         list.add(this.getResources().getString(R.string.media_player));
+        list.add(getResources().getString(R.string.sliding_pane_layout));
         listAdapter = new MainActivityListAdapter(this, list);
         main_rlv.setAdapter(listAdapter);
         main_rlv.setLayoutManager(new LinearLayoutManager(this));
@@ -54,6 +56,9 @@ public class MainActivity extends Activity {
 
             }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.media_player))){
                 Intent intent = new Intent(MainActivity.this, MediaPlayerActivity.class);
+                startActivity(intent);
+            }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.sliding_pane_layout))){
+                Intent intent = new Intent(MainActivity.this, SlidingPaneLayoutActivity.class);
                 startActivity(intent);
             }
 
