@@ -18,10 +18,14 @@
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".player.MediaPlayerActivity" />
-        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivity" />
+        <activity
+            android:name=".slidingpanelayout.SlidingPaneLayoutActivity"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
         <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityOne" />
         <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityTwo" />
-        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityThree"></activity>
+        <activity
+            android:name=".slidingpanelayout.SlidingPaneLayoutActivityThree"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme"></activity>
     </application>
 
 </manifest>

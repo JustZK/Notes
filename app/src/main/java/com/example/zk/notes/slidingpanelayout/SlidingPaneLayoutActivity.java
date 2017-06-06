@@ -1,6 +1,5 @@
 package com.example.zk.notes.slidingpanelayout;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -13,7 +12,7 @@ import com.example.zk.notes.util.LogUtil;
 
 import java.util.ArrayList;
 
-public class SlidingPaneLayoutActivity extends Activity {
+public class SlidingPaneLayoutActivity extends BaseSlideCloseActivity {
     private static final String TAG = "SlidingPaneLayoutActivity";
     private RecyclerView sliding_pane_layout_rlv;
     private ArrayList<String> list;

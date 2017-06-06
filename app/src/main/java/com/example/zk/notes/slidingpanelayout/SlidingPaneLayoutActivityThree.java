@@ -1,11 +1,10 @@
 package com.example.zk.notes.slidingpanelayout;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.zk.notes.R;
 
-public class SlidingPaneLayoutActivityThree extends Activity {
+public class SlidingPaneLayoutActivityThree extends BaseSlideCloseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
