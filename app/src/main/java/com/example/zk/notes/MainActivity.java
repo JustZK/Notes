@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.example.zk.notes.drawable.DrawableActivity;
 import com.example.zk.notes.login.LoginActivity;
 import com.example.zk.notes.player.MediaPlayerActivity;
 import com.example.zk.notes.slidingpanelayout.SlidingPaneLayoutActivity;
@@ -53,7 +54,8 @@ public class  MainActivity extends Activity {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.customize_drawable))){
-
+                Intent intent = new Intent(MainActivity.this, DrawableActivity.class);
+                startActivity(intent);
             }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.media_player))){
                 Intent intent = new Intent(MainActivity.this, MediaPlayerActivity.class);
                 startActivity(intent);

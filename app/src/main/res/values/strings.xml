@@ -8,4 +8,7 @@
     <string name="sliding_pane_layout_one">简单使用一</string>
     <string name="sliding_pane_layout_two">简单使用二</string>
     <string name="sliding_pane_layout_three">滑动关闭Activity</string>
+    <string name="drawable_one">自定义形状的Drawable</string>
+    <string name="drawable_two">自定义水印的Drawable</string>
+    <string name="drawable_three">自定义淡出的Drawable</string>
 </resources>
