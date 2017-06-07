@@ -1,6 +1,5 @@
 package com.example.zk.notes.player;
 
-import android.app.Activity;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,9 +9,10 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.example.zk.notes.R;
+import com.example.zk.notes.slidingpanelayout.BaseSlideCloseActivity;
 import com.example.zk.notes.util.LogUtil;
 
-public class MediaPlayerActivity extends Activity {
+public class MediaPlayerActivity extends BaseSlideCloseActivity {
 
     private SurfaceView surfaceView;
     private MediaPlayer mediaPlayer;
@@ -91,7 +91,7 @@ public class MediaPlayerActivity extends Activity {
                 public void surfaceDestroyed(SurfaceHolder holder) {
 
                     isSurfaceCreated = false;
-                    if (mediaPlayer.isPlaying()) {
+                    if (mediaPlayer != null && mediaPlayer.isPlaying()) {
                         curIndex = mediaPlayer.getCurrentPosition();
                         mediaPlayer.stop();
                     }
@@ -163,7 +163,7 @@ public class MediaPlayerActivity extends Activity {
                 }
             });
         } catch (Exception e) {
-            LogUtil.d("TEST","line:210--GuidVideoActivity--Play--error");
+            LogUtil.d("TEST", "line:210--GuidVideoActivity--Play--error");
         }
     }
 
@@ -222,5 +222,11 @@ public class MediaPlayerActivity extends Activity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        ReleasePlayer();
     }
 }

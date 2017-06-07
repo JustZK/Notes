@@ -1,6 +1,5 @@
 package com.example.zk.notes.login;
 
-import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.PixelFormat;
 import android.media.AudioManager;
@@ -14,10 +13,11 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.zk.notes.R;
+import com.example.zk.notes.slidingpanelayout.BaseSlideCloseActivity;
 
 import java.io.IOException;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseSlideCloseActivity {
     private SurfaceView login_sv;
     private MediaPlayer mediaPlayer;
     private ImageView login_bg_iv;
@@ -135,4 +135,13 @@ public class LoginActivity extends Activity {
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    public void finish() {
+        super.finish();
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
 }

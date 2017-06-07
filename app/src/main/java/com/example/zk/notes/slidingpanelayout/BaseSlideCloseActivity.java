@@ -1,8 +1,8 @@
 package com.example.zk.notes.slidingpanelayout;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.SlidingPaneLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
  * Created by ZK on 2017/6/6.
  */
 
-public class BaseSlideCloseActivity extends AppCompatActivity implements
+public class BaseSlideCloseActivity extends Activity implements
         SlidingPaneLayout.PanelSlideListener {
 
     @Override

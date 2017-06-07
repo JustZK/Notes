@@ -16,15 +16,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".player.MediaPlayerActivity" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".player.MediaPlayerActivity"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
         <activity
             android:name=".slidingpanelayout.SlidingPaneLayoutActivity"
+            android:label="SlidingPaneLayout"
             android:theme="@style/DIY.SlideClose.Transparent.Theme" />
-        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityOne" />
-        <activity android:name=".slidingpanelayout.SlidingPaneLayoutActivityTwo" />
+        <activity
+            android:name=".slidingpanelayout.SlidingPaneLayoutActivityOne"
+            android:label="SlidingPaneLayout" />
+        <activity
+            android:name=".slidingpanelayout.SlidingPaneLayoutActivityTwo"
+            android:label="SlidingPaneLayout" />
         <activity
             android:name=".slidingpanelayout.SlidingPaneLayoutActivityThree"
+            android:label="SlidingPaneLayout"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivity"
+            android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivityOne"
+            android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivityTwo"
+            android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivityThree"
+            android:label="Drawable"
             android:theme="@style/DIY.SlideClose.Transparent.Theme"></activity>
     </application>
 
