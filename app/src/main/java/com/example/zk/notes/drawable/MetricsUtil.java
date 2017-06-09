@@ -89,18 +89,18 @@ public class MetricsUtil {
 		return realHeight;
 	}
 
-    /** 
-     * �����ֻ��ķֱ��ʴ� dp �ĵ�λ ת��Ϊ px(����)  ����0.5��Ŀ������������
-     */  
-    public static int dip2px(Context context, float dpValue) {
+	/**
+	 * 根据手机的分辨率从 dp 的单位 转成为 px(像素)  。加0.5的目的是四舍五入
+	 */
+	public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
 
-    /** 
-     * �����ֻ��ķֱ��ʴ� px(����) �ĵ�λ ת��Ϊ dp ����0.5��Ŀ������������
-     */  
-    public static int px2dip(Context context, float pxValue) {
+	/**
+	 * 根据手机的分辨率从 px(像素) 的单位 转成为 dp 。加0.5的目的是四舍五入
+	 */
+	public static int px2dip(Context context, float pxValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }

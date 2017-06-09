@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#10000000"
     tools:context="com.example.zk.notes.drawable.DrawableActivityThree">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/drawable_three_btn_alpha_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="95%"
+        android:background="@drawable/bg_btn"
+        android:text="展示淡出Drawable"/>
+
+    <ImageView
+        android:id="@+id/drawable_three_iv_alpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:gravity="top|center_horizontal"
+        android:scaleType="centerInside" />
+
+</com.zhy.android.percent.support.PercentLinearLayout>

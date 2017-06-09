@@ -2,6 +2,7 @@ package com.example.zk.notes.drawable;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,6 +32,9 @@ public class DrawableActivityOne extends BaseSlideCloseActivity {
 
         mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.xiaohuangren);
 
+        drawable_one_shape_tv.setText("下面是原始图片");
+        drawable_one_shape_iv.setImageDrawable(new BitmapDrawable(getResources(), mBitmap));
+
         findViewById(R.id.drawable_one_circle_btn).setOnClickListener(mOnClickListener);
         findViewById(R.id.drawable_one_oval_btn).setOnClickListener(mOnClickListener);
         findViewById(R.id.drawable_one_round_btn).setOnClickListener(mOnClickListener);
@@ -51,7 +55,7 @@ public class DrawableActivityOne extends BaseSlideCloseActivity {
                 case R.id.drawable_one_round_btn:
                     drawable_one_shape_tv.setText("下面是圆角矩形修饰后的图片");
                     RoundDrawable drawable = new RoundDrawable(getResources(), mBitmap);
-                    drawable.setCornerRadius(MetricsUtil.dip2px(DrawableActivityOne.this, 40));
+                    drawable.setCornerRadius(MetricsUtil.dip2px(DrawableActivityOne.this, 4000));
                     drawable_one_shape_iv.setImageDrawable(drawable);
                     break;
                 default:

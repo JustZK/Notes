@@ -20,7 +20,7 @@ public class CircleDrawable extends BitmapDrawable {
 		BitmapShader bitmapShader = new BitmapShader(bitmap,
 				TileMode.CLAMP, TileMode.CLAMP);
 		mPaint = new Paint();
-		mPaint.setAntiAlias(true);  //�����
+		mPaint.setAntiAlias(true);
 		mPaint.setShader(bitmapShader);
 	}
 
