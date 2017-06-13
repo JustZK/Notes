@@ -51,6 +51,22 @@
         <activity
             android:name=".drawable.DrawableActivityThree"
             android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivityFour"
+            android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivityFive"
+            android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivitySix"
+            android:label="Drawable"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme" />
+        <activity
+            android:name=".drawable.DrawableActivitySeven"
+            android:label="Drawable"
             android:theme="@style/DIY.SlideClose.Transparent.Theme"></activity>
     </application>
 

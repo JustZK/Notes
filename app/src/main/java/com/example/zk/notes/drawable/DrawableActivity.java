@@ -34,6 +34,10 @@ public class DrawableActivity extends BaseSlideCloseActivity {
         list.add(this.getResources().getString(R.string.drawable_one));
         list.add(this.getResources().getString(R.string.drawable_two));
         list.add(this.getResources().getString(R.string.drawable_three));
+        list.add(this.getResources().getString(R.string.drawable_four));
+        list.add(this.getResources().getString(R.string.drawable_five));
+        list.add(this.getResources().getString(R.string.drawable_six));
+        list.add(this.getResources().getString(R.string.drawable_seven));
         listAdapter = new DrawableActivityListAdapter(this, list);
         drawable_rlv.setAdapter(listAdapter);
         drawable_rlv.setLayoutManager(new LinearLayoutManager(this));
@@ -54,6 +58,18 @@ public class DrawableActivity extends BaseSlideCloseActivity {
                 startActivity(intent);
             }else if (list.get(position).equals(DrawableActivity.this.getResources().getString(R.string.drawable_three))){
                 Intent intent = new Intent(DrawableActivity.this, DrawableActivityThree.class);
+                startActivity(intent);
+            }else if (list.get(position).equals(DrawableActivity.this.getResources().getString(R.string.drawable_four))){
+                Intent intent = new Intent(DrawableActivity.this, DrawableActivityFour.class);
+                startActivity(intent);
+            } else if (list.get(position).equals(DrawableActivity.this.getResources().getString(R.string.drawable_five))){
+                Intent intent = new Intent(DrawableActivity.this, DrawableActivityFive.class);
+                startActivity(intent);
+            }else if (list.get(position).equals(DrawableActivity.this.getResources().getString(R.string.drawable_six))){
+                Intent intent = new Intent(DrawableActivity.this, DrawableActivitySix.class);
+                startActivity(intent);
+            }else if (list.get(position).equals(DrawableActivity.this.getResources().getString(R.string.drawable_seven))){
+                Intent intent = new Intent(DrawableActivity.this, DrawableActivitySeven.class);
                 startActivity(intent);
             }
 

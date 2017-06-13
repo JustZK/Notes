@@ -11,4 +11,8 @@
     <string name="drawable_one">自定义形状的Drawable</string>
     <string name="drawable_two">自定义水印的Drawable</string>
     <string name="drawable_three">自定义淡出的Drawable</string>
+    <string name="drawable_four">裁剪图片</string>
+    <string name="drawable_five">裁剪动画</string>
+    <string name="drawable_six">缩放图片</string>
+    <string name="drawable_seven">旋转图片</string>
 </resources>
