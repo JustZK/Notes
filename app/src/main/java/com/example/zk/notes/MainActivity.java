@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.zk.notes.drawable.DrawableActivity;
+import com.example.zk.notes.keyboard.KeyboardActivity;
 import com.example.zk.notes.login.LoginActivity;
 import com.example.zk.notes.player.MediaPlayerActivity;
 import com.example.zk.notes.slidingpanelayout.SlidingPaneLayoutActivity;
@@ -38,6 +39,7 @@ public class  MainActivity extends Activity {
         list.add(this.getResources().getString(R.string.customize_drawable));
         list.add(this.getResources().getString(R.string.media_player));
         list.add(getResources().getString(R.string.sliding_pane_layout));
+        list.add(getResources().getString(R.string.keyboard));
         listAdapter = new MainActivityListAdapter(this, list);
         main_rlv.setAdapter(listAdapter);
         main_rlv.setLayoutManager(new LinearLayoutManager(this));
@@ -61,6 +63,9 @@ public class  MainActivity extends Activity {
                 startActivity(intent);
             }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.sliding_pane_layout))){
                 Intent intent = new Intent(MainActivity.this, SlidingPaneLayoutActivity.class);
+                startActivity(intent);
+            }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.keyboard))){
+                Intent intent = new Intent(MainActivity.this, KeyboardActivity.class);
                 startActivity(intent);
             }
 
