@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -36,8 +35,8 @@ public class NFCActivity extends BaseSlideCloseActivity {
     private int bCount;
 
     private PendingIntent mPendingIntent;
-    private IntentFilter[] mFilters;
-    private String[][] mTechLists;
+    private IntentFilter[] mFilters;//过滤器
+    private String[][] mTechLists;//NFC技术列表
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +56,10 @@ public class NFCActivity extends BaseSlideCloseActivity {
         } catch (IntentFilter.MalformedMimeTypeException e) {
             throw new RuntimeException("fail", e);
         }
-        mFilters = new IntentFilter[] { ndef, };
+        mFilters = new IntentFilter[]{ndef,};
 
         // 根据标签类型设置
-        mTechLists = new String[][] { new String[] { NfcA.class.getName() } };
+        mTechLists = new String[][]{new String[]{NfcA.class.getName()}};
 
     }
 
@@ -162,15 +161,29 @@ public class NFCActivity extends BaseSlideCloseActivity {
         // TODO 自动生成的方法存根
         super.onResume();
         enableForegroundDispatch();
-        // mNfcAdapter.enableForegroundDispatch(this, mPendingIntent, mFilters,
-        // mTechLists);
+//         mNfcAdapter.enableForegroundDispatch(this, mPendingIntent, mFilters,
+//         mTechLists);
     }
 
     private void enableForegroundDispatch() {
         // TODO 自动生成的方法存根
         if (mNfcAdapter != null) {
+            // 这行代码是添加调度，效果是读标签的时候不会弹出候选程序，直接用本程序处理
             mNfcAdapter.enableForegroundDispatch(this, mPendingIntent,
                     mFilters, mTechLists);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        disableForegroundDispatch();
+    }
+
+    private void disableForegroundDispatch() {
+        // TODO 自动生成的方法存根
+        if (mNfcAdapter != null) {
+            mNfcAdapter.disableForegroundDispatch(this);
         }
     }
 
@@ -179,7 +192,6 @@ public class NFCActivity extends BaseSlideCloseActivity {
         // TODO 自动生成的方法存根
         super.onNewIntent(intent);
         nfc_tv.append("发现新的 Tag:  " + ++mCount + "\n");// mCount 计数
-        Log.d("test","发现新的 Tag:  " + ++mCount + "\n");
         String intentActionStr = intent.getAction();// 获取到本次启动的action
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intentActionStr)// NDEF类型
                 || NfcAdapter.ACTION_TECH_DISCOVERED.equals(intentActionStr)// 其他类型
@@ -189,12 +201,9 @@ public class NFCActivity extends BaseSlideCloseActivity {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             byte[] bytesId = tag.getId();// 获取id数组
             info = "";
-            info += ByteArrayToHexString(bytesId) + "\n";
+            info += ByteArrayToHexString(bytesId);
             nfc_tv.append("标签UID:  " + info + "\n");
-
-            // 读取存储信息
-            // mChange=false;
-            nfc_tv.append("读取成功! " + readTag(tag) + "\n");
+            nfc_tv.append("读取成功! " + readTag(tag) + "\n" + "\n");
         }
     }
 
