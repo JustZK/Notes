@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.zk.notes.animation.AnimationActivityOne">
+
+    <Button
+        android:background="@drawable/bg_btn"
+        android:id="@+id/animation_one_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放弧形动画"/>
+
+    <LinearLayout
+        android:id="@+id/animation_one_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

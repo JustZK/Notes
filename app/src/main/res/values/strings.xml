@@ -6,6 +6,8 @@
     <string name="media_player">SurfaceView + MediaPlayer</string>
     <string name="sliding_pane_layout">SlidingPaneLayout</string>
     <string name="keyboard">自定义软键盘</string>
+    <string name="animation">动画效果</string>
+    <string name="nfc">nfc</string>
     <string name="sliding_pane_layout_one">简单使用一</string>
     <string name="sliding_pane_layout_two">简单使用二</string>
     <string name="sliding_pane_layout_three">滑动关闭Activity</string>
@@ -16,4 +18,9 @@
     <string name="drawable_five">裁剪动画</string>
     <string name="drawable_six">缩放图片</string>
     <string name="drawable_seven">旋转图片</string>
+    <string name="animation_one">圆弧进度动画</string>
+    <string name="animation_two">淡入淡出动画</string>
+    <string name="animation_three">秋千摇摆动画</string>
+    <string name="animation_four">GIF动画的实现</string>
+    <string name="animation_five">书籍翻页动画</string>
 </resources>
