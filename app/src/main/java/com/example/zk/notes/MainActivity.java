@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.zk.notes.animation.AnimationActivity;
+import com.example.zk.notes.dialog.DialogPlusActiviry;
 import com.example.zk.notes.drawable.DrawableActivity;
 import com.example.zk.notes.keyboard.KeyboardActivity;
 import com.example.zk.notes.login.LoginActivity;
@@ -44,6 +45,7 @@ public class  MainActivity extends Activity {
         list.add(getResources().getString(R.string.keyboard));
         list.add(getResources().getString(R.string.animation));
         list.add(getResources().getString(R.string.nfc));
+        list.add(getResources().getString(R.string.dialog_plus));
         listAdapter = new MainActivityListAdapter(this, list);
         main_rlv.setAdapter(listAdapter);
         main_rlv.setLayoutManager(new LinearLayoutManager(this));
@@ -76,6 +78,9 @@ public class  MainActivity extends Activity {
                 startActivity(intent);
             }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.nfc))){
                 Intent intent = new Intent(MainActivity.this, NFCActivity.class);
+                startActivity(intent);
+            }else if (list.get(position).equals(MainActivity.this.getResources().getString(R.string.dialog_plus))){
+                Intent intent = new Intent(MainActivity.this, DialogPlusActiviry.class);
                 startActivity(intent);
             }
 

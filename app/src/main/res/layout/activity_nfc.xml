@@ -1,45 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.android.percent.support.PercentLinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#CFCFCF"
     tools:context="com.example.zk.notes.nfc.NFCActivity">
 
+    <EditText
+        android:id="@+id/nfc_edt_write"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_edt"
+        android:hint="写入的内容"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%" />
+
+    <RadioGroup
+        android:id="@+id/nfc_rg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_heightPercent="10%"
+        app:layout_widthPercent="100%">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/nfc_rb_read"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="READ" />
+
+        <RadioButton
+            android:id="@+id/nfc_rb_write"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="WRITE" />
+
+        <RadioButton
+            android:id="@+id/nfc_rb_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="DELETE" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/nfc_read_btn"
+        android:text="清空日志信息"
+        android:id="@+id/nfc_btn"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_heightPercent="10%"
-        app:layout_widthPercent="100%"
-        android:text="read" />
+        app:layout_widthPercent="100%"/>
 
-    <Button
-        android:id="@+id/nfc_write_btn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_heightPercent="10%"
-        app:layout_widthPercent="100%"
-        android:text="write" />
-
-    <Button
-        android:id="@+id/nfc_delete_btn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_heightPercent="10%"
-        app:layout_widthPercent="100%"
-        android:text="delete" />
 
     <ScrollView
-        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@android:drawable/edit_text"
         app:layout_heightPercent="70%"
-        app:layout_widthPercent="100%"
-        android:background="@android:drawable/edit_text">
+        app:layout_widthPercent="100%">
 
         <TextView
             android:id="@+id/nfc_tv"

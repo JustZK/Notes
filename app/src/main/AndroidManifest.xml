@@ -7,6 +7,9 @@
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
+    <uses-feature
+        android:name="android.hardware.nfc.hce"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -102,18 +105,17 @@
             android:name=".animation.AnimationActivityFive"
             android:label="Drawable"
             android:theme="@style/DIY.SlideClose.Transparent.Theme" />
-        <activity android:name=".nfc.NFCActivity"
+        <activity
+            android:name=".nfc.NFCActivity"
             android:label="Drawable"
-            android:theme="@style/DIY.SlideClose.Transparent.Theme" >
+            android:theme="@style/DIY.SlideClose.Transparent.Theme">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" >
-                </action>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
 
-                <category android:name="android.intent.category.DEFAULT" >
-                </category>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.nfc.action.TECH_DISCOVERED" />
@@ -123,6 +125,26 @@
                 android:name="android.nfc.action.TECH_DISCOVERED"
                 android:resource="@xml/nfc_tech_filter" />
         </activity>
+
+        <service
+            android:name=".nfc.CardService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.cardemulation.host_apdu_service"
+                android:resource="@xml/aid_list" />
+        </service>
+
+        <activity
+            android:name=".dialog.DialogPlusActiviry"
+            android:theme="@style/DIY.SlideClose.Transparent.Theme"></activity>
     </application>
 
 </manifest>
