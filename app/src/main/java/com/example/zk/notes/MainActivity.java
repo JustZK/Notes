@@ -15,8 +15,11 @@ import com.example.zk.notes.keyboard.KeyboardActivity;
 import com.example.zk.notes.login.LoginActivity;
 import com.example.zk.notes.nfc.NFCActivity;
 import com.example.zk.notes.player.MediaPlayerActivity;
+import com.example.zk.notes.service.DemoIntentService;
+import com.example.zk.notes.service.DemoPushService;
 import com.example.zk.notes.slidingpanelayout.SlidingPaneLayoutActivity;
 import com.example.zk.notes.util.LogUtil;
+import com.igexin.sdk.PushManager;
 
 import java.util.ArrayList;
 
@@ -51,6 +54,11 @@ public class  MainActivity extends Activity {
         main_rlv.setLayoutManager(new LinearLayoutManager(this));
         main_rlv.setItemAnimator(new DefaultItemAnimator());
         listAdapter.setOnItemClickListener(onItemClickListener);
+
+        // com.getui.demo.DemoPushService 为第三方自定义推送服务
+        PushManager.getInstance().initialize(this.getApplicationContext(), DemoPushService.class);
+        // com.getui.demo.DemoIntentService 为第三方自定义的推送服务事件接收类
+        PushManager.getInstance().registerPushIntentService(this.getApplicationContext(), DemoIntentService.class);
 
     }
 

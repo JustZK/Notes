@@ -4,6 +4,29 @@
 
     <uses-permission android:name="android.permission.NFC" />
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
+    <!-- Device begin -->
+    <!-- 屏幕保持唤醒 不锁屏  plus.device.setWakelock();plus.device.isWakelock(); -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 震动 权限 plus.device.vibrate(); -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 拨打电话 plus.device.dail(); -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 访问网络状态 plus.networkinfo.* -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 读写手机状态和身份 plus.devices.* -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- iBeancon功能所需权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 个推3.0电子围栏功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="true" />
@@ -145,6 +168,16 @@
         <activity
             android:name=".dialog.DialogPlusActiviry"
             android:theme="@style/DIY.SlideClose.Transparent.Theme"></activity>
+
+        <service
+            android:name=".service.DemoPushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":pushservice">
+        </service>
+
+        <service android:name=".service.DemoIntentService"/>
+
     </application>
 
 </manifest>

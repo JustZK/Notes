@@ -2,14 +2,24 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.zk.notes"
-        minSdkVersion 21
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                GETUI_APP_ID : "3ieN7itSGZ8h24qdz2yFw4",
+                GETUI_APP_KEY : "1j5DajimC28ZQ2xUEqgKi8",
+                GETUI_APP_SECRET : "YcBlRkdrdD7MaBy9s5imZ5"
+        ]
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64", "x86"
+        }
     }
     buildTypes {
         release {
@@ -23,11 +33,10 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.getui:sdk:2.11.1.0'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
     compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.android.support:cardview-v7:26.0.0-alpha1'
